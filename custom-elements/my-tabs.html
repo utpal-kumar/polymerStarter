@@ -12,11 +12,7 @@ background-color: rgb(0, 188, 212);
 }
 </style>
 
-lear from : https://www.polymer-project.org/docs/polymer/databinding.html
-
-This value of name is: <b> {{name}} </b>
-
-<h2>Harcoded menu items:</h2>
+<h2>My tabs:</h2>
 <paper-tabs selected="1" selectedindex="1" class="paper-tabs">
 <paper-tab id="paper_tab">ITEM ONE</paper-tab>
 <paper-tab id="paper_tab1" active>ITEM TWO</paper-tab>
@@ -24,24 +20,11 @@ This value of name is: <b> {{name}} </b>
 <paper-tab id="paper_tab3">ITEM FOUR</paper-tab>
 <paper-tab id="paper_tab4">ITEM FIVE</paper-tab>
 </paper-tabs>
-
-<h2>Bound menu item names:</h2>
-<paper-tabs selected="1" selectedindex="0" class="paper-tabs">
-  <template repeat="{{name in names}}">
-   <paper-tab>{{name}}</paper-tab> 
-  </template>
-</paper-tabs>
-
 </template>
 
 <script>
 Polymer('my-tabs', {
-	
-// initialize the element's model
-      ready: function() {
-        this.name = "Utpal Kumar Das";
-        this.names = ["Item 1", "Item 2", "Item 3", "Item 4"];
-      }
+
 });
 </script>
 </polymer-element>

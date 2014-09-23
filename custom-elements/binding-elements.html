@@ -1,0 +1,42 @@
+<link rel="import" href="/bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="/bower_components/paper-tabs/paper-tab.html">
+
+<polymer-element name="binding-elements">
+<template>
+<style>
+.paper-tabs {
+width: 480px;
+color: rgb(255, 255, 255);
+box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 2px;
+background-color: rgb(0, 188, 212);
+}
+</style>
+
+<h2>Simple binding:</h2>
+This value of name is: <b> {{name}} </b>
+
+<h2>Bound menu item names:</h2>
+<paper-tabs selected="1" selectedindex="0" class="paper-tabs">
+  <template repeat="{{name in names}}">
+   <paper-tab on-click={{showSelectedName}}>{{name}}</paper-tab> 
+  </template>
+</paper-tabs>
+
+</template>
+
+<script>
+Polymer('binding-elements', {
+	
+     // initialize the element's model
+      ready: function() {
+        this.name = "Utpal Kumar Das";
+        this.names = ["Item 1", "Item 2", "Item 3", "Item 4"];
+      },
+      
+      showSelectedName: function (e, detail, sender) {        
+        alert(e.target.templateInstance.model.name + ' was clicked!');
+      }
+});
+</script>
+</polymer-element>
+ 
